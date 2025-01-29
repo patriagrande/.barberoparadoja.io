@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>La Paradoja del Barbero (1.2)</title>
+    <title>La Paradoja del Barbero (v 2.0)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Importante para responsive design -->
     <style>
         body {
@@ -24,6 +24,12 @@
         /* Estilo para mostrar el contenido */
         .visible-content {
             display: block; /* Muestra el contenido */
+        }
+
+        .aclaracion{
+            color: #5F9EA0;
+            font-size: 10px;
+            font-style: italic;
         }
 
         /* Estilo para el botón */
@@ -116,6 +122,22 @@
 
 <!-- Botón para alternar entre mostrar y ocultar -->
 <button id="toggleButton" onclick="toggleContent()" disabled>Espera 1 minuto antes de ver el contenido</button>
+<div class="aclaracion">
+<p>
+Esta página es SOLAMENTE un experimento realizado con <b>DeepSeek</b>.
+</p>
+<p>
+El botón para desplegar el resto del documento tiene una demora (en este caso de 1 minuto) con el objeto de "impedir" que el/la estudiante acceda a las respuestas antes de permitirse un tiempo (prodencial?) para refleccionar sobre la tarea.
+</p>
+<p>
+Mediante consultas al Chat me propuse:
+</p>
+<ul>
+    <li>Construír un contenido, en este caso relativo a la paradoja del barbero </li>
+    <li>Llevar el texto elaborado a lenguaje html. Una vez armada la página solicité modificaciones al chat.. por ejemplo: que una porción se oculte o se visibilice, que esto se demore un cierto tiempo, colores, estilos, etc. </li>
+    <li>Con el objeto de dejarlo dispoible, emplear <b>github</b> para publicarlo en la web. De todos modos aclarar que lo interesante sería que los contenidos generados por docentes estén colgados de un servidor escolar (al estilo Conectar Igualdad)</li>
+</ul>
+</div>
 
 <script>
     // Habilitar el botón después de 1 minuto (60,000 milisegundos)
