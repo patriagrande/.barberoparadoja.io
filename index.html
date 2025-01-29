@@ -3,7 +3,11 @@
 <head>
     <title>La Paradoja del Barbero</title>
     <style>
-        body { font-family: Arial, sans-serif; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
         h1 { color: #2E86C1; }
         h2 { color: #3498DB; }
         p { line-height: 1.6; }
@@ -25,10 +29,14 @@
             background-color: #3498DB;
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 15px 30px; /* Más grande para móviles */
+            border-radius: 10px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 18px; /* Texto más grande */
+            width: 100%; /* Ocupa todo el ancho disponible */
+            max-width: 300px; /* Limita el ancho máximo en pantallas grandes */
+            margin: 20px auto; /* Centra el botón */
+            display: block; /* Para que ocupe su propia línea */
         }
 
         #toggleButton:hover {
@@ -39,6 +47,14 @@
         #toggleButton:disabled {
             background-color: #B0B0B0;
             cursor: not-allowed;
+        }
+
+        /* Estilos responsivos */
+        @media (max-width: 600px) {
+            #toggleButton {
+                font-size: 16px; /* Ajusta el tamaño del texto en móviles */
+                padding: 12px 24px; /* Ajusta el padding en móviles */
+            }
         }
     </style>
 </head>
