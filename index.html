@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>La Paradoja del Barbero</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        h1 { color: #2E86C1; }
+        h2 { color: #3498DB; }
+        p { line-height: 1.6; }
+        ul { margin-left: 20px; }
+        .activity { background-color: #F2F3F4; padding: 10px; border-radius: 5px; }
+
+        /* Estilo para ocultar el contenido */
+        .hidden-content {
+            display: none; /* Oculta el contenido inicialmente */
+        }
+
+        /* Estilo para mostrar el contenido */
+        .visible-content {
+            display: block; /* Muestra el contenido */
+        }
+
+        /* Estilo para el botón */
+        #toggleButton {
+            background-color: #3498DB;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #toggleButton:hover {
+            background-color: #2E86C1;
+        }
+
+        /* Estilo para el botón deshabilitado */
+        #toggleButton:disabled {
+            background-color: #B0B0B0;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+<h1>La Paradoja del Barbero</h1>
+<h2>Una Introducción a la Lógica y los Conjuntos</h2>
+
+<h2>¿Qué es una paradoja?</h2>
+<p>Una paradoja es una situación o afirmación que parece contradecirse a sí misma o que desafía nuestra intuición. En matemáticas, las paradojas nos ayudan a entender los límites de nuestras ideas y a mejorar nuestras definiciones y razonamientos.</p>
+
+<h2>La paradoja del barbero</h2>
+<p>Imaginemos un pueblo donde hay un barbero. Este barbero tiene una regla muy especial:</p>
+<ul>
+    <li><strong>"El barbero afeita a todas las personas del pueblo que no se afeitan a sí mismas."</strong></li>
+</ul>
+<p>Es decir, si alguien no se afeita a sí mismo, el barbero lo afeita. Pero si alguien ya se afeita a sí mismo, el barbero no lo hace.</p>
+<p>Ahora, hagamos una pregunta clave:</p>
+<p><strong>¿Quién afeita al barbero?</strong></p>
+
+<!-- Contenido oculto inicialmente -->
+<div id="hiddenSection" class="hidden-content">
+    <p>Vamos a analizar las dos posibilidades:</p>
+    <ol>
+        <li><strong>Si el barbero se afeita a sí mismo:</strong>
+            <ul>
+                <li>Según la regla, el barbero solo afeita a quienes <strong>no</strong> se afeitan a sí mismos.</li>
+                <li>Si él se afeita, entonces <strong>no debería afeitarse</strong>, porque solo afeita a los que no lo hacen.</li>
+                <li>Esto es una contradicción.</li>
+            </ul>
+        </li>
+        <li><strong>Si el barbero no se afeita a sí mismo:</strong>
+            <ul>
+                <li>Según la regla, el barbero debe afeitar a todos los que no se afeitan a sí mismos.</li>
+                <li>Si él no se afeita, entonces <strong>debería afeitarse</strong>.</li>
+                <li>Esto también es una contradicción.</li>
+            </ul>
+        </li>
+    </ol>
+    <p>En ambos casos, llegamos a una situación imposible. Esto es lo que hace que sea una paradoja.</p>
+
+    <h2>¿Qué nos enseña esta paradoja?</h2>
+    <p>La paradoja del barbero nos muestra que algunas definiciones o reglas pueden llevar a contradicciones si no se hacen con cuidado. En matemáticas, es importante asegurarse de que nuestras definiciones sean claras y consistentes para evitar problemas como este.</p>
+    <p>Bertrand Russell, el filósofo y matemático que propuso esta paradoja, la usó para ilustrar un problema en la teoría de conjuntos, una rama de las matemáticas que estudia las colecciones de objetos. La paradoja nos ayuda a entender por qué necesitamos reglas precisas para definir conjuntos y evitar contradicciones.</p>
+
+    <div class="activity">
+        <h2>Actividad para pensar:</h2>
+        <ol>
+            <li>Imagina que eres el barbero del pueblo. ¿Cómo resolverías el problema de quién te afeita a ti?</li>
+            <li>¿Puedes pensar en otras situaciones de la vida real que parezcan paradójicas?</li>
+        </ol>
+    </div>
+
+    <h2>Conclusión:</h2>
+    <p>La paradoja del barbero es un ejemplo fascinante de cómo las ideas simples pueden llevar a contradicciones si no se definen con cuidado. A través de esta paradoja, aprendemos la importancia de la lógica y la precisión en las matemáticas.</p>
+</div>
+
+<!-- Botón para alternar entre mostrar y ocultar -->
+<button id="toggleButton" onclick="toggleContent()" disabled>Espera 1 minuto antes de ver el contenido</button>
+
+<script>
+    // Habilitar el botón después de 1 minuto (60,000 milisegundos)
+    setTimeout(() => {
+        const toggleButton = document.getElementById("toggleButton");
+        toggleButton.disabled = false; // Habilitar el botón
+        toggleButton.textContent = "Mostrar contenido"; // Cambiar el texto del botón
+    }, 60000); // 60,000 milisegundos = 1 minuto
+
+    // Función para alternar entre mostrar y ocultar el contenido
+    function toggleContent() {
+        const hiddenSection = document.getElementById("hiddenSection");
+        const toggleButton = document.getElementById("toggleButton");
+
+        if (hiddenSection.classList.contains("hidden-content")) {
+            // Mostrar el contenido
+            hiddenSection.classList.remove("hidden-content");
+            hiddenSection.classList.add("visible-content");
+            toggleButton.textContent = "Ocultar";
+        } else {
+            // Ocultar el contenido
+            hiddenSection.classList.remove("visible-content");
+            hiddenSection.classList.add("hidden-content");
+            toggleButton.textContent = "Mostrar contenido";
+        }
+    }
+</script>
+
+</body>
+</html>
